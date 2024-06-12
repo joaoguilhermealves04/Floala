@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Atas>
+
+<h1 class="text-center">Atas Prototico</h1>
+
+<div class="text-center">
+	<a class="d-flex justify-center aling-item-center"
+	   style="width:150px;height:200px; background-color:lightcyan; font-size:100px;text-decoration:none; color:black;"
+	   asp-action="CriarAtas">
+		+
+	</a>
+
+</div>
+
+<div class="row">
+	<h2 class="text-center nb-4">Atas Salvas</h2>
+	@foreach (var item in Model)
+	{
+
+
+		<div class="col-2">
+			<span>Criação: @item.DataCriacao.ToString("dd/MM/yyyy HH:mm")</span>
+			<div class="d-flex justify-content-center align-items-center"
+				 style="width: 150px; height:200px; background-color: lightblue; font-size: 100px">
+				<a style="text-decoration: none; color:black " asp-action="EditarAtas" asp-route-id="@item.Id">📝</a>
+
+
+			</div>
+			<span style="font-weight: bold">@item.Titulo</span>
+		</div>
+
+	}
+
+</div>

@@ -1,0 +1,17 @@
+﻿@model Atas
+<h2 class="text-center"> Arquivo Atas</h2>
+<div class="col-md-12">
+	<form asp-action="CriarAtas" asp-controller="Home" method="post">
+		<div asp-validation-summary="All"></div>
+
+		<div class="form-group mb-3">
+			<input asp-for="Titulo"class="form-control" value="Documento sem nome" />
+		</div>
+		<div class="form-group mb-3">
+			<textarea id="froala" asp-for="Conteudo" style="width:68vw; height:68vh;" value="Documento sem nome"></textarea>
+		</div>
+
+		<input type="submit" class="btn btn-primary w-100" value="Criar" />
+		<a asp-action="Index" class="btn btn-info mt-3 w-100">Voltar</a>
+	</form>
+</div>
